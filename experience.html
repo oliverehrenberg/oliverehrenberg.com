@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Experience – Oliver Ehrenberg, AI, Tech & Sales Consultant</title>
+    <meta name="description" content="Explore Oliver Ehrenberg's professional experience in technology, AI, digital marketing, and business strategy across multiple industries." />
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <script>
+    // Denna text vill du visa i headern:
+    const pageTitleForHeader = "Professional Experience – Oliver Ehrenberg";
+  </script>
+  
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <main>
+    
+
+        <div class="no-background">
+            <!-- Experience Section -->
+            <div id="experience">
+                
+                <div class="education-entry">
+                    <h4>Construction Sourcing Sweden AB, Stockholm <span style="color: #333;"><em><br>Founder & CEO</em></span></h4>
+                    <p><strong>June 2024 - Present</strong></p>
+                    <ul>
+                        <li>Launched a platform to address disputes in the construction industry, enhancing communication and transparency among companies and suppliers.</li>
+                        <li>Drove tech-based solutions to tackle industry challenges, laying groundwork for sustainable growth.</li>
+                        <li>Strengthened relationships with clients and suppliers, optimizing industry collaboration and transaction efficiency.</li>
+                    </ul>
+                </div>
+
+                <div class="education-entry">
+                    <h4>Vårdexperten Sverige AB, Stockholm <span style="color: #333;"><em><br>Founder & Business Developer</em></span></h4>
+                    <p><strong>February 2024 - Present</strong></p>
+                    <ul>
+                        <li>Founded a care-matching platform, connecting clients with specialized caregivers to enhance service quality and matching efficiency.</li>
+                        <li>Engineered a user-centric interface, streamlining the caregiver-client matching process for improved personalized care solutions.</li>
+                        <li>Secured partnerships to expand service offerings, boosting client satisfaction and market reach.</li>
+                    </ul>
+                </div>
+
+                <div class="education-entry">
+                    <h4>Swedish Construction Sales AB, Stockholm <span style="color: #333;"><em><br>CEO & Co-Founder</em></span></h4>
+                    <p><strong>Feb 2021 - Present</strong></p>
+                    <ul>
+                        <li>Strategized a business roadmap resulting in a 40% annual revenue increase.</li>
+                        <li>Expanded client base by 400% and retained 90% through strong acquisition and retention efforts.</li>
+                        <li>Implemented CRM to optimize sales workflows, enhancing conversion rates by 20%.</li>
+                    </ul>
+                </div>
+
+                <div class="education-entry">
+                    <h4>Beijer Byggmaterial AB, Eskilstuna <span style="color: #333;"><em><br>Store Employee</em></span></h4>
+                    <p><strong>June 2021 - April 2022</strong></p>
+                    <ul>
+                        <li>Advised customers on construction materials, enhancing customer satisfaction through expert guidance.</li>
+                        <li>Collaborated on promotional strategies, increasing product visibility and sales performance.</li>
+                        <li>Maintained high levels of customer service, contributing to a loyal customer base.</li>
+                    </ul>
+                </div>
+
+                <div class="education-entry">
+                    <h4>Zmarta Försäkring AB, Stockholm <span style="color: #333;"><em><br>Insurance Advisor</em></span></h4>
+                    <p><strong>June 2020 - August 2020</strong></p>
+                    <ul>
+                        <li>Advised clients on insurance products and customized insurance plans to meet individual needs.</li>
+                        <li>Developed strong client relationships, fostering loyalty through attentive and personalized service.</li>
+                        <li>Applied in-depth product knowledge to answer client inquiries and enhance customer satisfaction.</li>
+                    </ul>
+                </div>
+
+                <div class="education-entry">
+                    <h4>NEO Marketing, Stockholm <span style="color: #333;"><em><br>Self-Employed Digital Marketer</em></span></h4>
+                    <p><strong>April 2017 - June 2020</strong></p>
+                    <ul>
+                        <li>Managed digital marketing campaigns, including SEO and social media strategies, to boost brand visibility.</li>
+                        <li>Collaborated with clients to develop tailored marketing strategies, aligned with their business goals.</li>
+                        <li>Used analytics to monitor and optimize campaign performance, achieving measurable increases in engagement.</li>
+                    </ul>
+                </div>
+
+                <div class="education-entry">
+                    <h4>Telenor Sverige AB, Stockholm <span style="color: #333;"><em><br>Store Salesperson</em></span></h4>
+                    <p><strong>August 2016 - June 2020</strong></p>
+                    <ul>
+                        <li>Exceeded sales targets consistently by 20-100% through strong customer engagement and product recommendations.</li>
+                        <li>Trained and mentored new employees, enhancing overall team performance and customer service quality.</li>
+                        <li>Provided technical support and resolved customer issues, ensuring an exceptional customer experience.</li>
+                    </ul>
+                </div>
+
+                <div class="education-entry">
+                    <h4>McDonald's, Stockholm <span style="color: #333;"><em><br>Crew Trainer</em></span></h4>
+                    <p><strong>March 2015 - September 2016</strong></p>
+                    <ul>
+                        <li>Trained new employees in cash register operations, customer service, and store processes.</li>
+                        <li>Maintained efficient store operations during peak hours, ensuring customer satisfaction.</li>
+                        <li>Recognized for exceptional customer service, contributing to a positive team environment.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+        
+        // Sätt header-rubriken till det du vill visa på denna sida:
+        document.querySelector('.page-heading').textContent = pageTitleForHeader;
+        
+        // Markera aktiv länk i menyn (om du redan har denna kod)
+        const links = document.querySelectorAll("nav a");
+        links.forEach(link => {
+          if (window.location.pathname.includes(link.getAttribute("href"))) {
+            link.classList.add("active");
+          }
+        });
+      })
+      .catch(error => console.error('Error loading header:', error));
+  </script>
+    
+    <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('beforeend', data);
+        document.getElementById('year').textContent = new Date().getFullYear();
+      })
+      .catch(error => console.error('Error loading footer:', error));
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const entries = document.querySelectorAll(".education-entry");
+            const isSmallScreen = window.innerWidth <= 768;
+
+            entries.forEach(entry => {
+                let isClicked = false; 
+                entry.addEventListener("click", event => {
+                    event.stopPropagation(); 
+                    if (isClicked) {
+                        entry.classList.remove("expanded");
+                        isClicked = false;
+                    } else {
+                        entries.forEach(e => {
+                            e.classList.remove("expanded");
+                        });
+                        entry.classList.add("expanded");
+                        isClicked = true;
+                    }
+                });
+                if (!isSmallScreen) {
+                    entry.addEventListener("mouseenter", () => {
+                        if (!isClicked) {
+                            entry.classList.add("expanded");
+                        }
+                    });
+                    entry.addEventListener("mouseleave", () => {
+                        if (!isClicked) {
+                            entry.classList.remove("expanded");
+                        }
+                    });
+                }
+                document.addEventListener("click", () => {
+                    entries.forEach(e => {
+                        e.classList.remove("expanded");
+                    });
+                    isClicked = false;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

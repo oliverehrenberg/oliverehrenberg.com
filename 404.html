@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <script>
+    // Denna text vill du visa i headern:
+    const pageTitleForHeader = "Oliver Ehrenberg - 404";
+  </script>
+  
+    <!-- Header -->
+    <div id="header-container"></div>
+<main>
+    <!-- Content -->
+    <div class="no-background">
+        <section id="error-message" class="section">
+            <h1>Oops, You've Hit a Dead End!</h1>
+            <p>
+                Looks like the page you were looking for took a detour and got lost in cyberspace. 
+                Maybe it’s having coffee with other broken links, who knows? 
+            </p>
+            <p>
+                Don't worry though, you can always head back to safety. I promise my <span class="highlight">About</span> page is well-behaved and waiting for you!
+            </p>
+            <div class="button-container">
+                <a href="/" class="error-button">Take Me Home</a>
+            </div>
+        </section>
+    </div>
+ </main>
+    <!-- Header Script -->
+ <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+        
+        // Sätt header-rubriken till det du vill visa på denna sida:
+        document.querySelector('.page-heading').textContent = pageTitleForHeader;
+        
+        // Markera aktiv länk i menyn (om du redan har denna kod)
+        const links = document.querySelectorAll("nav a");
+        links.forEach(link => {
+          if (window.location.pathname.includes(link.getAttribute("href"))) {
+            link.classList.add("active");
+          }
+        });
+      })
+      .catch(error => console.error('Error loading header:', error));
+  </script>
+    
+<script>
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    // Lägg in footern i DOM:en
+    document.body.insertAdjacentHTML('beforeend', data);
+
+    // Uppdatera sedan årtalet
+    document.getElementById('year').textContent = new Date().getFullYear();
+  })
+  .catch(error => console.error('Error loading footer:', error));
+</script>
+</body>
+</html>

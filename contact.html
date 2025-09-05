@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Oliver Ehrenberg, AI & Tech Consultant</title>
+    <meta name="description" content="Get in touch with Oliver Ehrenberg for AI, digital marketing, and business strategy consultation. Phone, email, or LinkedIn." />
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <script>
+    // Denna text vill du visa i headern:
+    const pageTitleForHeader = "Contact Oliver Ehrenberg";
+  </script>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <main>
+ 
+
+        <div class="contact-container">
+                   <!-- H1-rubrik -->
+
+            <h2 class="section-title">Get in touch with me</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt icon"></i>
+                    <span>Stockholm</span>
+                </div>
+                <div class="contact-item">
+                    <span>
+                        <i class="fas fa-phone icon"></i>
+                        <a href="tel:+46734353588">+46 73 435 35 88</a>
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin icon"></i>
+                    <a href="https://www.linkedin.com/in/oliver-ehrenberg-6148a712a/" target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope icon"></i>
+                    <a href="mailto:contact@oliverehrenberg.com">contact@oliverehrenberg.com</a>
+                </div>
+            </div>
+            <a 
+                href="https://app.constructionsourcing.se/meetings/oliver/1?uuid=e8ca4a4f-e5f7-4974-bb99-2e16ab641deb" 
+                class="contact-button" 
+                target="_blank" 
+                rel="noopener noreferrer"
+            >
+                Schedule A Meeting
+            </a>
+        </div>
+    </main>
+
+<script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+        
+        // Sätt header-rubriken till det du vill visa på denna sida:
+        document.querySelector('.page-heading').textContent = pageTitleForHeader;
+        
+        // Markera aktiv länk i menyn (om du redan har denna kod)
+        const links = document.querySelectorAll("nav a");
+        links.forEach(link => {
+          if (window.location.pathname.includes(link.getAttribute("href"))) {
+            link.classList.add("active");
+          }
+        });
+      })
+      .catch(error => console.error('Error loading header:', error));
+  </script>
+    
+    <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('beforeend', data);
+        document.getElementById('year').textContent = new Date().getFullYear();
+      })
+      .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+</html>

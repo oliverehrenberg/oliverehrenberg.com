@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Startsida (index) -->
+  <url>
+    <loc>https://oliverehrenberg.com/</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Consultation-sidan -->
+  <url>
+    <loc>https://oliverehrenberg.com/consultation</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact-sidan -->
+  <url>
+    <loc>https://oliverehrenberg.com/contact</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Education-sidan -->
+  <url>
+    <loc>https://oliverehrenberg.com/education</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Experience-sidan -->
+  <url>
+    <loc>https://oliverehrenberg.com/experience</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Projects-sidan -->
+  <url>
+    <loc>https://oliverehrenberg.com/projects</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,1096 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lora', serif;
+}
+
+/* Colors and Background */
+body {
+background: linear-gradient(135deg, #e3f6fd 0%, #cdeefa 40%, #f0f8fc 80%, #e8f6fd 100%);
+    background-repeat: no-repeat, repeat;
+    background-size: cover, auto;
+    background-attachment: fixed;
+}
+
+.page-heading {
+  font-size: 2em;       /* Storlek på texten */
+  color: #333333;       /* Mörkare, mer neutral färg */
+  font-weight: bold;    /* Gör rubriken fetstilt */
+  text-align: center;   /* Centrerar rubriken */
+}
+
+@media (max-width: 768px) {
+  .page-heading {
+    font-size: 1.3em;    /* Minska något från 2em */
+  }
+}
+
+/* Minska fontstorlek på väldigt små skärmar */
+@media (max-width: 480px) {
+  .page-heading {
+    font-size: 1em;   /* Mindre, så att texten ryms på en rad utan scroll */
+  }
+}
+
+.internal-link {
+  color: rgb(0, 145, 174);
+  text-decoration: none; /* Om du inte vill ha understrykning som standard */
+}
+
+/* Valfritt: Lägg till en hover-effekt */
+.internal-link:hover {
+  text-decoration: underline; /* Understrykning vid hover */
+}
+
+/* Container */
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.8s ease-out;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+
+.no-background {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.8s ease-out;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #005f73;
+}
+header h1 {
+    font-size: 2.5em;
+    color: #333333;
+    font-weight: bold;
+}
+header h2 {
+    font-size: 1.2em;
+    color: #005f73;
+    font-weight: normal;
+    margin-top: 10px;
+    white-space: nowrap;
+    border-right: none;
+    animation: none;
+}
+
+/* Typing Effect (Larger Screens) */
+@media (min-width: 769px) {
+    .typing-container {
+        display: block; /* Enable typing container */
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid #005f73; /* Add caret */
+        animation: typing 3s steps(40, end), blink-caret 0.75s step-end 3, hide-caret 4s forwards;
+    }
+
+    .scroll-container {
+        display: none; /* Hide scrolling container */
+    }
+}
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+        50% { border-color: transparent; }
+    }
+
+
+
+@media (max-width: 768px) {
+    .scroll-container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .scroll-container h2 {
+        display: block;
+        white-space: nowrap;
+        text-align: left; /* Align text to the left for scrolling */
+        animation: scroll-text 15s linear infinite; /* Scrolling animation */
+    }
+
+    .typing-container {
+        display: none; /* Hide typing container */
+    }
+}
+
+/* Keyframes for Scrolling Animation */
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(100%); /* Start from outside the screen on the right */
+    }
+    100% {
+        transform: translateX(-100%); /* Move all the way to the left */
+    }
+}
+
+
+/* Navigation */
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+nav a {
+    color: #005f73;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    position: relative;
+}
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 2px;
+    background: #005f73;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+nav a:hover::after,
+nav a.active::after {
+    transform: scaleX(1);
+}
+
+section {
+    border-bottom: 1px solid rgba(0, 95, 115, 0.2);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+/* Section Headings */
+section h3 {
+    font-size: 2em;
+    color: #005f73;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+/* About Section */
+.intro {
+    line-height: 1.5;
+    margin-bottom: 10px;
+    text-align: justify;
+    font-size: 1.1em;
+    letter-spacing: 0.02em;
+    word-spacing: 0.1em;
+    hyphens: auto;
+    text-justify: inter-word;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        line-height: 1.7; /* Lite mindre radavstånd för mobiler */
+        font-size: 1em; /* Mindre fontstorlek på små skärmar */
+        word-spacing: 0.01em; /* Minska mellanrum mellan ord ytterligare */
+    }
+}
+
+.highlight {
+    background-image: linear-gradient(120deg, rgba(205, 239, 252, 0.5) 0%, rgba(163, 217, 245, 0.5) 100%);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    color: #333333; /* Mörk text */
+    padding: 0 0px; /* Minimalt utrymme runt texten */
+    border-radius: 2px; /* Subtil rundning */
+    font-weight: 500; /* Lättare fetstil */
+    display: inline; /* Behåll inline-format */
+    background-clip: content-box; /* Säkerställer att endast textdelen får bakgrundsfärg */
+}
+
+.skills-heading {
+    font-size: 1em; /* Minska storleken för att vara mindre dominerande */
+    color: #005f73; /* Behåll färgen för konsekvens */
+    font-weight: normal; /* Gör rubriken mindre tung */
+    text-align: center; /* Centrera rubriken */
+    margin-top: 30px; /* Minska avståndet ovanför rubriken */
+    margin-bottom: 5px; /* Minska avståndet under rubriken */
+    text-transform: uppercase; /* Lägg till en subtil effekt */
+    letter-spacing: 0.02em;
+    border-top: 1px solid rgba(0, 95, 115, 0.3);
+    border-bottom: 1px solid rgba(0, 95, 115, 0.3);
+    padding: 5px 0;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Justerar bredden till 220px */
+    gap: 15px; /* Lite mindre avstånd för att få plats med fler kolumner */
+    padding: 20px 10px;
+    justify-items: center; /* Centrerar etiketterna i varje kolumn */
+    justify-content: center;
+}
+
+.skill {
+    background-color: rgba(224, 247, 250, 0.8);
+    color: #005f73;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.9em;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 0px 10px rgba(227, 246, 253, 0.5);
+    cursor: pointer;
+    min-height: 45px; /* Sätter en minimumhöjd för konsekvent höjd */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Gör att varje etikett tar upp hela kolumnens bredd */
+    max-width: 220px; /* Hindrar etiketterna från att bli för breda på stora skärmar */
+}
+
+/* Skill Styling */
+.skill {
+    background-color: #e3f9ff;
+    color: #005f73;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 0px 10px rgba(227, 246, 253, 0.5);
+    cursor: pointer;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 220px;
+}
+
+/* Hover Effect for Larger Screens */
+@media (min-width: 769px) {
+    .skill:hover {
+        transform: translateY(-5px);
+        background-color: #005f73;
+        color: #ffffff;
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15), 0px 0px 15px rgba(227, 246, 253, 0.8);
+    }
+}
+
+/* Clicked State for Smaller Screens */
+.skill.active {
+    transform: scale(1.1); /* Same visual effect as hover */
+    background-color: #005f73;
+    color: #ffffff;
+    box-shadow: 0px 4px 15px rgba(0, 95, 115, 0.3);
+}
+
+
+/* Tooltip Styling */
+.global-tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #ffffff;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.9em;
+    padding: 8px 12px;
+    border-radius: 6px;
+    max-width: 300px; /* Constrains width for readability */
+    line-height: 1.5;
+    white-space: normal; /* Allows text wrapping */
+    z-index: 2147483647;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(4px); /* Initial position for smooth transition */
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Tooltip Arrow */
+.global-tooltip::after {
+    content: '';
+    position: absolute;
+    top: -6px; /* Position arrow directly under tooltip box */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+}
+
+/* Show Tooltip with Animation */
+.global-tooltip.show {
+    opacity: 1;
+    transform: translateY(0); /* Moves into place smoothly */
+}
+
+
+
+
+/* Show Tooltip on Hover */
+.skill:hover + .global-tooltip,
+.global-tooltip.show {
+    opacity: 1;
+    transform: translateY(0); /* Slide effect */
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .skills {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Gör kolumner mindre för mobiler */
+    }
+
+    .skill {
+        flex: 1 1 auto; /* Skill tags adapt to available space */
+        margin: 5px;
+    }
+}
+
+/* Experience Entry Styling */
+.experience-entry {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    overflow: hidden; /* Ensures content stays hidden */
+    max-height: 60px; /* Default height to show only h4 and p */
+}
+
+/* Experience Entry Default State */
+.experience-entry {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    overflow: hidden; /* Hide overflowing content */
+    max-height: 60px; /* Default height to show only h4 and p */
+    cursor: pointer; /* Indicate interactivity */
+}
+
+/* Expanded State (For Hover and Click) */
+.experience-entry:hover,
+.experience-entry.expanded {
+    max-height: 500px; /* Adjust as needed for full content */
+    padding: 15px;
+}
+
+
+.experience-entry h4 {
+    font-size: 1.2em;
+    color: #005f73;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.experience-entry p {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+.experience-entry ul {
+    margin-top: 8px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+.experience-entry li {
+    margin-bottom: 5px;
+    line-height: 1.6;
+    font-size: 0.95em;
+}
+
+/* Education Entries */
+.education-entry {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #e0f7fa;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07);
+    transition: box-shadow 0.7s ease;
+    cursor: pointer; /* Indicate interactivity */
+    overflow: hidden; /* Ensure hidden content doesn't spill out */
+}
+
+/* Title Styling */
+.education-entry h4 {
+    font-size: 1em;
+    color: #005f73;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Description Styling */
+.education-entry p {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* Collapsed State (Initially Hidden Content) */
+.education-entry ul {
+    opacity: 0; /* Initially hide the list */
+    max-height: 0; /* Collapse the list */
+    overflow: hidden; /* Prevent visibility of hidden content */
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    padding-left: 20px; /* Keep padding for consistency */
+}
+
+/* Expanded State (Hover or Click) */
+.education-entry:hover ul,
+.education-entry.expanded ul {
+    opacity: 1; /* Make the list visible */
+    max-height: none; /* Set a height to allow full expansion */
+}
+.education-entry li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    font-size: 0.95em;
+    color: #333;
+}
+
+/* Highlighted Course Titles */
+.education-entry li strong {
+    color: #0a9396;
+    font-weight: bold;
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+    section h3 {
+        font-size: 1.8em;
+    }
+    .education-entry h4 {
+        font-size: 1em;
+    }
+    .education-entry p {
+        font-size: 0.8em;
+    }
+    .education-entry li {
+        font-size: 0.9em;
+    }
+    .education-entry:hover {
+        pointer-events: none; /* Prevent hover interaction visually */
+    }    
+}
+
+/* Contact Section Container */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 850px; /* Samma maxbredd som .no-background */
+    margin-top: 100px;
+    margin: 60px auto;
+    padding: 20px 30px; /* Samma padding */
+    position: relative; /* Samma position */
+    z-index: 1; /* För att hålla lagringsordningen */
+    background: rgba(255, 255, 255, 0.2); /* Lättare bakgrund för mer transparent effekt */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px; /* Behåll rundade hörn */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.8s ease-out; /* Behåll fade-in animationen */
+    backdrop-filter: blur(8px); /* Samma oskärpa i bakgrunden */
+    transition: transform 0.3s; /* Lägger till rörelse-effekt vid hover */
+}
+
+/* Contact Section Title */
+.section-title {
+    font-size: 2em;
+    color: #0a9396;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Contact Information Styling */
+.contact-info {
+    margin: 30px 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.1em;
+    margin-bottom: 35px;
+    color: #333;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-item i.icon {
+    font-size: 1.4em;
+    color: #0a9396;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-item:hover {
+    color: #0a9396;
+    transform: scale(1.05);
+}
+
+.contact-item:hover i.icon {
+    transform: scale(1.2);
+    color: #005f73;
+}
+
+.contact-item a {
+    color: #0a9396;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #005f73;
+}
+
+/* Enhanced Button with Glow and Pulse Animation */
+.contact-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #0a9396;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1.1em;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0 0 10px rgba(10, 147, 150, 0.4);
+    animation: pulse 2s infinite;
+}
+
+.contact-button:hover {
+    background-color: #005f73;
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3), 0 0 15px rgba(10, 147, 150, 0.6);
+}
+
+/* Pulse Animation for Button */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0 0 10px rgba(10, 147, 150, 0.4);
+    }
+    50% {
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0 0 15px rgba(10, 147, 150, 0.6);
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* Project Section */
+#projects {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    text-align: justify;
+    font-size: 1.1em;
+    letter-spacing: 0.02em;
+    word-spacing: 0.1em;
+    hyphens: auto;
+    text-justify: inter-word;
+}
+
+@media (max-width: 768px) {
+    .projects {
+        font-size: 1em; /* Mindre fontstorlek på små skärmar */
+        word-spacing: 0.01em; /* Minska mellanrum mellan ord ytterligare */
+    }
+}
+
+#projects h3 {
+    color: #005f73;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.project-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Project Card */
+.project-card {
+    width: 280px;
+    height: 180px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+@media (min-width: 769px) {
+    .project-card:hover .project-inner {
+        transform: rotateY(180deg); /* Hover effect on larger screens */
+    }
+}
+
+.project-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+
+.project-front, .project-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px;
+    color: #ffffff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.project-front {
+    background-color: #e0f7fa;
+    color: #005f73;
+    text-align: center;
+
+}
+
+
+.project-back {
+    background-color: #005f73;
+    transform: rotateY(180deg);
+    padding: 15px; /* Reduce padding */
+    font-size: 0.9em; /* Slightly reduce font size */
+    line-height: 1.4;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    overflow: hidden;
+    
+}
+
+
+
+.project-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+.description-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Add space between description-price and the button */
+}
+
+.project-description {
+    flex: 1; /* Takes remaining space */
+    margin-right: 10px; /* Space between text and price */
+    font-size: 0.9em;
+}
+
+.price-container {
+    font-weight: bold;
+    white-space: nowrap; /* Keeps price on one line */
+}
+
+.project-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.project-link:hover {
+    color: #f5f5f5;
+}
+
+/* Center the button within its container */
+.button-container {
+    text-align: center;
+    margin-top: auto; /* Pushes the button to the bottom */
+}
+
+
+.meeting-button {
+    display: inline-block;
+    padding: 8px 12px; /* Reduce padding for button */
+    font-size: 0.9em; /* Slightly reduce font size */
+    margin-top: 10px;
+    background-color: #ffffff;
+    color: #0a9396;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.meeting-button:hover {
+    background-color: #e0f7fa;
+    color: #005f73;
+}
+
+/* Ensure text and button fit within card */
+.project-inner {
+    padding: 10px;
+}
+
+/* Flipped State for Smaller Screens */
+.project-inner.flipped {
+    transform: rotateY(180deg); /* Same effect as hover but triggered by a click */
+}
+
+html, body {
+    height: 100%; /* Gör att hela sidan tar upp full höjd */
+    margin: 0; /* Ingen marginal */
+    padding: 0; /* Ingen padding */
+}
+
+body {
+    display: flex; /* Använd flexbox */
+    flex-direction: column; /* Layout i kolumner */
+}
+
+main {
+    flex: 1; /* Låt main växa och ta upp allt ledigt utrymme */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #005f73;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 15px;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+footer a {
+    color: #94d2bd;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 8px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+footer .footer-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .footer-icons span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+}
+
+footer .footer-icons i {
+    font-size: 1.1em;
+    color: #94d2bd;
+}
+
+footer .footer-icons i:hover {
+    color: #ffffff;
+}
+
+/* Footer Divider */
+footer .divider {
+    margin: 15px auto;
+    width: 80%;
+    height: 1px;
+    background-color: #94d2bd;
+    opacity: 0.6;
+}
+
+/* Footer Links Group */
+footer .footer-links {
+    margin-top: 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Error Page Styles */
+#error-message {
+    text-align: center;
+    padding: 50px;
+    color: #333;
+}
+
+#error-message h1 {
+    font-size: 2.5em;
+    color: #005f73;
+    margin-bottom: 20px;
+}
+
+#error-message p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.error-button {
+    display: inline-block;
+    background-color: #005f73;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.error-button:hover {
+    background-color: #0a9396;
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    /* Scale container width for medium screens */
+    .container, .no-background {
+        max-width: 90%;
+        padding: 30px;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    header h2 {
+        font-size: 1em;
+    }
+    .skills {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjust for tablet view */
+    .container, .no-background {
+        max-width: 100%;
+        padding: 20px;
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+    header h2 {
+        font-size: 0.9em;
+    }
+    section h3 {
+        font-size: 1.6em;
+    }
+    .skills {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+    }
+    .skill {
+        font-size: 0.8em;
+        padding: 8px;
+        
+    }
+    .project-card {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjust for mobile view */
+    header h1 {
+        font-size: 1.5em;
+    }
+    header h2 {
+        font-size: 0.8em;
+    }
+    .skills {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    .skill {
+        font-size: 0.7em;
+    }
+    .project-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .project-description {
+        font-size: 1em;
+    }
+    .price-container {
+        font-size: 0.8em;
+    }
+    .meeting-button {
+        font-size: 0.8em;
+        padding: 6px 10px;
+    }
+    .contact-container {
+        padding: 15px;
+    }
+    .contact-item {
+        font-size: 0.9em;
+    }
+    .contact-button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+    footer p, footer a {
+        font-size: 0.8em;
+    }
+}
+
+/* Header Responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+    header h1 {
+        font-size: 1.8em; /* Adjust main title size */
+        line-height: 1.2; /* Avoid overlapping text */
+    }
+    header h2 {
+        font-size: 0.9em; /* Adjust subtitle size */
+        margin-top: 5px;
+    }
+    nav {
+        margin: 10px 0; /* Reduce spacing */
+    }
+    nav a {
+        margin: 0 10px; /* Adjust spacing between links */
+        font-size: 0.9em; /* Reduce link font size */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em; /* Further reduce for very small screens */
+    }
+    header h2 {
+        font-size: 0.8em;
+    }
+    nav a {
+        margin: 0 8px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    footer .footer-icons {
+        display: flex;
+        flex-direction: column; /* Stack icons vertically */
+        align-items: center;    /* Center icons horizontally */
+        gap: 15px;              /* Add spacing between icons */
+        margin-top: 15px;       /* Add some spacing above the icons */
+    }
+
+    footer .footer-icons i {
+        font-size: 1.2em;       /* Ensure icons are still visible */
+    }
+}
+
+@media (max-width: 480px) {
+    footer .footer-icons {
+        gap: 10px;              /* Reduce spacing between icons for very small screens */
+    }
+
+    footer .footer-icons span {
+        text-align: center;     /* Center-align any text next to icons */
+    }
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+.profile-picture {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15), 0 0 10px rgba(10, 147, 150, 0.3);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+
+    object-fit: cover;
+    border: 1px solid rgba(10, 147, 150, 0.4);
+}
+
+.profile-picture:hover {
+    transform: scale(1.10); /* Lätt förstoring vid hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3), 0 0 20px rgba(10, 147, 150, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+
+
+
